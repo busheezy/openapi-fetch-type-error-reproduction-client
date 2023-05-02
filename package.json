@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsx src/index.ts",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "typegen": "pnpm exec openapi-typescript ./spec.json --output client.d.ts"
   },
   "keywords": [],
   "author": "",
@@ -17,8 +18,12 @@
     "@typescript-eslint/parser": "^5.55.0",
     "eslint": "^8.36.0",
     "eslint-config-prettier": "^8.7.0",
+    "openapi-typescript": "^6.2.4",
     "prettier": "^2.8.4",
     "tsx": "^3.12.5",
     "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "openapi-fetch": "^0.1.0"
   }
 }

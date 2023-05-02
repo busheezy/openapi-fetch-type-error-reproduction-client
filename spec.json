@@ -1,0 +1,59 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/cats": {
+      "get": {
+        "operationId": "AppController_getCats",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/CatEntity" }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "AppController_updateCat",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/CatEntity" }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "info": {
+    "title": "Cats example",
+    "description": "The cats API description",
+    "version": "1.0",
+    "contact": {}
+  },
+  "tags": [{ "name": "cats", "description": "" }],
+  "servers": [],
+  "components": {
+    "schemas": {
+      "CatEntity": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "number" },
+          "name": { "type": "string" },
+          "age": { "type": "number" }
+        },
+        "required": ["id", "name", "age"]
+      }
+    }
+  }
+}
